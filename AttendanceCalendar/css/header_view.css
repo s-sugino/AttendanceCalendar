@@ -1,0 +1,48 @@
+/**
+ * @file header_view.css
+ * 
+ * 
+ */
+
+/*--------------------------------------------------------*
+   HeaderView
+　*--------------------------------------------------------*/
+
+.hbox {
+    -fx-font-size: 30pt;
+    -fx-font-family: "Segoe UI Light";
+    -fx-padding: 5;
+    -fx-spacing: 0;
+    -fx-background-color: grey;
+}
+
+.label {
+    -fx-text-fill: white;
+    -fx-opacity: 3;
+}
+
+.button {
+    -fx-text-fill: white;
+	-fx-padding: 0;
+    -fx-opacity: 3;
+	-fx-background-color: rgba(200,200,200,0.5);
+	-fx-background-radius: 3;
+}
+
+#titleBox {
+	-fx-spacing: 5;
+	-fx-alignment: center-left;
+}
+
+#ctrlBox {
+    -fx-font-size: 30pt;
+	-fx-spacing: 5;
+	-fx-alignment: center-right;
+}
+
+#ctrlBox #separator {
+    -fx-font-size: 30pt;
+    -fx-text-fill: blue;
+	-fx-spacing: 5;
+	-fx-alignment: center-right;
+}

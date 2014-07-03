@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright (c) 2014, jtec/atcal. All rights reserved. -->
+ 
+<?import javafx.scene.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import jp.co.jtec.atcal.*?>
+<?import jp.co.jtec.atcal.calendar.*?>
+<?import jp.co.jtec.atcal.calendar.view.*?>
+
+<fx:root type="javafx.scene.layout.BorderPane" xmlns:fx="http://javafx.com/fxml" fx:id="calendarPane">
+	<top>
+		<HeaderView fx:id="headerView" />
+	</top>
+	<center>
+	    <VBox>
+	        <MonthlyView fx:id="monthlyView" />
+	    </VBox>
+	</center>
+</fx:root>

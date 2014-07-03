@@ -1,0 +1,21 @@
+/**
+ * @file auth.css
+ * 
+ * 
+ */
+
+/*--------------------------------------------------------*
+   Authentication style
+　*--------------------------------------------------------*/
+
+#loginPane {
+	-fx-background-color: rgba(230,230,230,0.9);
+	-fx-background-radius: 15;
+	-fx-padding: 0;
+}
+
+#loginTopPane {
+	-fx-background-color: rgba(0,0,0,0.9);
+	-fx-background-radius: 15 15 0 0 ;
+	-fx-padding: 0;
+}

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright (c) 2013, jtec/projko. All rights reserved. -->
+ 
+<?import javafx.scene.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import jp.co.jtec.atcal.*?>
+
+<fx:root type="javafx.scene.layout.BorderPane" xmlns:fx="http://javafx.com/fxml" prefHeight="160" prefWidth="230" fx:id="loginPane">
+	<top>
+	    <HBox style="-fx-padding: 10 10 10 10;" fx:id="loginTopPane" alignment="center">
+	        <Label text="Login" style="-fx-font: BOLD 15 Arial; -fx-text-fill: white;" />
+	    </HBox>
+	</top>
+	<center>
+	    <VBox>
+	       	<HBox style="-fx-padding: 10 20 10 20;" alignment="center" spacing="20">
+	        	<Label text="ID" prefWidth="40" style="-fx-font: BOLD 13 Arial; -fx-text-fill: black;" />
+	        	<TextField fx:id="idField" />
+	       	</HBox>
+	       	<HBox style="-fx-padding: 10 20 10 20;" alignment="center" spacing="20">
+	        	<Label text="PASS" prefWidth="40" style="-fx-font: BOLD 13 Arial; -fx-text-fill: black;" />
+	        	<PasswordField fx:id="passField" />
+	       	</HBox>
+	       	<HBox style="-fx-padding: 10 20 10 20;" alignment="top_right" spacing="10">
+	       		<Button text="Login" fx:id="loginButton"/>
+	       		<Button text="Cancel" fx:id="cancelButton" />
+	    	</HBox>
+	    </VBox>
+	</center>
+</fx:root>

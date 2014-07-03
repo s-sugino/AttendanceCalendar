@@ -1,0 +1,84 @@
+/**
+ * @file monthly_view.css
+ * 
+ * 
+ */
+
+/*--------------------------------------------------------*
+   MonthlyView
+　*--------------------------------------------------------*/
+
+.label {
+    -fx-font-size: 30pt;
+    -fx-font-family: "Segoe UI Light";
+    -fx-text-fill: white;
+    -fx-alignment: center-left;
+    -fx-opacity: 3;
+}
+
+.table-view {
+	-fx-table-cell-border-color: transparent;
+    -fx-table-header-border-color: transparent;
+    -fx-background-color: transparent;
+}
+
+.table-view .filler {
+    -fx-size: 35;
+    -fx-border-width: 0 0 1 0;
+    -fx-border-color: 
+        transparent
+        transparent
+        derive(-fx-base, 80%) 
+        transparent;
+    -fx-border-insets: 0 10 1 0;
+}
+
+/*-----<< Column Header >>----*/
+
+.table-view .column-header {
+    -fx-size: 35;
+    -fx-border-width: 0 0 1 0;
+    -fx-border-color: 
+        transparent
+        transparent
+        derive(-fx-base, 80%) 
+        transparent;
+    -fx-border-insets: 0 10 1 0;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: transparent;
+}
+
+.table-view .column-header .label {
+    -fx-font-size: 20pt;
+    -fx-font-family: "Segoe UI Light";
+    -fx-text-fill: white;
+    -fx-alignment: center-left;
+    -fx-opacity: 3;
+}
+
+/*-----<< Table Row Cell >>----*/
+
+.table-row-cell {
+    -fx-background-color: transparent;
+    -fx-pref-width: 300px;
+}
+
+.table-row-cell .label {
+    -fx-font-size: 20pt;
+    -fx-font-family: "Segoe UI Light";
+    -fx-text-fill: white;
+    -fx-alignment: center-left;
+    -fx-opacity: 3;
+}
+
+/*-----<< Table Row Cell (Empty) >>----*/
+
+.table-row-cell:empty {
+    -fx-background-color: transparent;
+}
+
+.table-row-cell:empty .table-cell {
+    -fx-border-width: 0px;
+}

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright (c) 2013, jtec/atcal. All rights reserved. -->
+ 
+<?import javafx.scene.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import jp.co.jtec.atcal.*?>
+<?import jp.co.jtec.atcal.calendar.*?>
+<?import jp.co.jtec.atcal.calendar.view.*?>
+
+<fx:root type="javafx.scene.layout.BorderPane" xmlns:fx="http://javafx.com/fxml" prefHeight="730" prefWidth="730" fx:id="projectPane">
+	<top>
+	    <HBox fx:id="topPane">
+	        <Label fx:id="topLabel" text="Attendance Calendar" />
+	        <HBox spacing="10" alignment="top_right">
+	        	<Button fx:id="authButton" text="login" />
+	        	<Button fx:id="closeButton" text="close" />
+	    	</HBox>
+	    </HBox>
+	</top>
+	<center>
+	    <CalendarView fx:id="calendar" />
+	</center>
+</fx:root>

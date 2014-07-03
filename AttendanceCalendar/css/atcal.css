@@ -1,0 +1,49 @@
+/**
+ * @file regulus_app.css
+ * 
+ * 
+ */
+
+/*--------------------------------------------------------*
+   Base Pane style
+　*--------------------------------------------------------*/
+
+#projectPane {
+	-fx-background-color: rgba(0,38,114,0.5);
+	-fx-background-radius: 15;
+	-fx-padding: 0;
+}
+
+#topPane {
+	-fx-background-color: rgba(0,8,54,0.5);
+	-fx-background-radius: 15 15 0 0;
+	-fx-padding: 20 10 10 10;
+	-fx-spacing: 450;
+}
+
+#topLabel {
+	-fx-font: NORMAL 15 Arial;
+	-fx-text-fill: white;
+}
+
+#authButton {
+	-fx-background-color: rgba(200,200,200,0.5);
+	-fx-background-radius: 30;
+	-fx-font: BOLD 11 Arial;
+	-fx-text-fill: white;
+	-fx-pref-width: 60;
+	-fx-pref-height: 20;
+	-fx-alignment: center;
+}
+
+/*
+#closeButton {
+	-fx-background-color: rgba(200,200,200,0.5);
+	-fx-background-radius: 30;
+	-fx-font: BOLD 11 Arial;
+	-fx-text-fill: white;
+	-fx-pref-width: 60;
+	-fx-pref-height: 20;
+	-fx-alignment: center;
+}
+*/

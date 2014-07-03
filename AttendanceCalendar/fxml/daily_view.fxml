@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright (c) 2014, jtec/atcal. All rights reserved. -->
+
+<?import java.lang.*?> 
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?> 
+<?import javafx.collections.*?> 
+<?import fxmltableview.*?>
+<?import jp.co.jtec.atcal.calendar.*?>
+
+<fx:root type="javafx.scene.layout.VBox" xmlns:fx="http://javafx.com/fxml">
+	<Label text="date"  style="-fx-font-size: 25;" fx:id="dateLabel" />
+	<Label text="event" fx:id="eventLabel" />
+</fx:root>
