@@ -38,7 +38,7 @@ public class CalendarView extends BorderPane {
 		
 		super();
 		Location.getInstance().loadFxml( "calendar_view.fxml", this );
-		this.getStylesheets().add( Location.getInstance().getURL( "css\\calendar_view.css" ).toString() );
+		Location.getInstance().loadStyleSheet( "css\\calendar_view.css", this );
 		
 		this.headerView.setTitleButtonAction( "prevMonthButton" , this.prevMonthAction );
 		this.headerView.setTitleButtonAction( "nextMonthButton" , this.nextMonthAction );

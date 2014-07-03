@@ -21,8 +21,8 @@ public class HeaderView extends HBox{
 		
 		super();
 		Location.getInstance().loadFxml( "header_view.fxml" , this );
-		this.getStylesheets().add( Location.getInstance().getURL( "css\\header_view.css" ).toString() );
-
+		Location.getInstance().loadStyleSheet( "css\\header_view.css", this );
+		
 		/* @note for ".hbox" style in css */
 		this.getStyleClass().add( "hbox" );
 		
