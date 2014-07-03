@@ -1,11 +1,13 @@
 package jp.co.jtec.atcal.calendar.view;
 
+import java.util.Calendar;
 import java.util.Iterator;
 
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -17,6 +19,8 @@ import jp.co.jtec.atcal.calendar.model.WeeklyData;
 
 public class MonthlyView extends TableView<WeeklyData> {
 
+	private Label titleLabel;
+	
 	private MonthlyData monthlyData;
 	
 	private final
@@ -40,13 +44,10 @@ public class MonthlyView extends TableView<WeeklyData> {
 			}
 		};
 		
-	public MonthlyView() {		
+	public MonthlyView() {
+		
 		super();
-		this.setupColumn();
-		this.setEditable( true );
-	}
-	
-	private void setupColumn() {
+		
 		Iterator<String> itr = WeeklyData.dayOfWeeks().iterator();
 		while ( itr.hasNext() ) {
 			TableColumn<WeeklyData, DailyData> column = new TableColumn<WeeklyData, DailyData>(itr.next());
@@ -54,6 +55,12 @@ public class MonthlyView extends TableView<WeeklyData> {
 			column.setCellValueFactory( this.cellValueFactory );
 			this.getColumns().add( column );			
 		}
+		this.setEditable( true );	
+		this.setCurrent();
+	}
+	
+	public void setTitleLabel( Label titleLabel ) {
+		this.titleLabel = titleLabel;
 	}
 	
 	public void update( int year, int month ) {
@@ -62,7 +69,7 @@ public class MonthlyView extends TableView<WeeklyData> {
 		this.setItems( null );
 		this.layout();
 		
-		this.monthlyData = new MonthlyData( year, month );		
+		this.monthlyData = new MonthlyData( year, month );
 		ObservableList<WeeklyData> weeklyDataList = FXCollections.observableArrayList();
 		Iterator<WeeklyData> itr = this.monthlyData.iterator();
 		while ( itr.hasNext() ) {
@@ -71,6 +78,25 @@ public class MonthlyView extends TableView<WeeklyData> {
 		
 		this.setItems( weeklyDataList );
 		this.layout();
+		
+		if ( this.titleLabel != null ) {
+			this.titleLabel.setText( " " + year + " / " + month + " " );
+		}
+	}
+	
+	public void setCurrent() {
+		Calendar cal = Calendar.getInstance();
+		int year  = cal.get(Calendar.YEAR);
+		int month = cal.get(Calendar.MONTH) + 1;
+		this.update( year, month );
+	}
+	
+	public void slide( int amount ) {
+		Calendar cal = this.monthlyData.getCalendar();
+		cal.add( Calendar.MONTH, amount );
+		int year  = cal.get(Calendar.YEAR);
+		int month = cal.get(Calendar.MONTH) + 1;
+		this.update( year, month );
 	}
 	
 	public MonthlyData getItem() {

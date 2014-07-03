@@ -20,10 +20,12 @@
 	    <Button fx:id="nextMonthButton" text="prev"  />
 	</HBox>
 	<HBox fx:id="ctrlBox">
-	    <Button fx:id="inButton"    text="in"  />
-	    <Button fx:id="outButton"   text="out" />
-		<Label  fx:id="separator"   text="|"   />
-	    <Button fx:id="minButton"   text="-"   />
-	    <Button fx:id="closeButton" text="×"   />
+	    <Button fx:id="inButton"    text="in"    />
+	    <Button fx:id="outButton"   text="out"   />
+		<Label  fx:id="separator"   text=" | "   />
+		<Button fx:id="minButton"   text="guest" />
+		<Label  fx:id="separator"   text=" | "   />
+	    <Button fx:id="minButton"   text="-"     />
+	    <Button fx:id="closeButton" text="×"     />
 	</HBox>
 </fx:root>
