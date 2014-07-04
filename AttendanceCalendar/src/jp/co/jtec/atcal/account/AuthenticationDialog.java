@@ -20,14 +20,14 @@ public class AuthenticationDialog extends Dialog {
 	
 	private final EventHandler<ActionEvent> cancelAction = new EventHandler<ActionEvent>() {
 		@Override
-		public void handle(ActionEvent arg0) {
+		public void handle(ActionEvent event) {
 			// TODO Auto-generated method stub		
 		}
 	};
 	
 	private final EventHandler<ActionEvent> ctrlAction = new EventHandler<ActionEvent>() {
 		@Override
-		public void handle(ActionEvent arg0) {
+		public void handle(ActionEvent event) {
 			// TODO Auto-generated method stub
 		}
 	};

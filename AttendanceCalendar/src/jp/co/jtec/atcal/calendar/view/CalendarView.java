@@ -4,9 +4,12 @@ import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
+import javafx.scene.control.Button;
 import javafx.scene.layout.BorderPane;
 import jp.co.jtec.atcal.Location;
+import jp.co.jtec.atcal.account.Account;
+import jp.co.jtec.atcal.account.AccountManager;
+import jp.co.jtec.atcal.calendar.model.MonthlyData;
 
 public class CalendarView extends BorderPane {
 
@@ -17,6 +20,7 @@ public class CalendarView extends BorderPane {
 		@Override
 		public void handle(ActionEvent event) {
 			monthlyView.slide( -1 );
+			updateCalendar();
 		}
 	};
 	
@@ -24,7 +28,15 @@ public class CalendarView extends BorderPane {
 		@Override
 		public void handle(ActionEvent event) {
 			monthlyView.slide( +1 );
+			updateCalendar();
 		}
+	};
+	
+	private final EventHandler<ActionEvent> authAction = new EventHandler<ActionEvent>() {
+		@Override
+		public void handle(ActionEvent arg0) {
+			// TODO Auto-generated method stub
+		}		
 	};
 	
 	private final EventHandler<ActionEvent> closeAction = new EventHandler<ActionEvent>() {
@@ -44,7 +56,18 @@ public class CalendarView extends BorderPane {
 		this.headerView.setTitleButtonAction( "nextMonthButton" , this.nextMonthAction );
 		this.headerView.setCtrlButtonAction( "closeButton", this.closeAction );
 		
-		this.monthlyView.setTitleLabel( (Label)this.headerView.getTitleAreaNode( "titleLabel" ) );
-		this.monthlyView.setCurrent();
+		this.updateAccount();
+		this.updateCalendar();
+	}
+	
+	private void updateAccount() {
+		Account account = AccountManager.getInstance().getPrimary();
+		Button accountButton = (Button) this.headerView.getCtrlAreaNode( "accountButton" );
+		accountButton.setText( account.getName() );
+	}
+	
+	private void updateCalendar() {
+		MonthlyData monthlyData = this.monthlyView.getItem();
+		this.headerView.updateTitle( " " + monthlyData.getYear() + " / " + monthlyData.getMonth() + " " );
 	}
 }

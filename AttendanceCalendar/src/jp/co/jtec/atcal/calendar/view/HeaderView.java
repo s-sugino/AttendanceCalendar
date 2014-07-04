@@ -7,6 +7,7 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.Priority;
@@ -14,7 +15,9 @@ import jp.co.jtec.atcal.Location;
 
 public class HeaderView extends HBox{
 
-	@FXML private HBox titleBox;
+	@FXML private HBox  titleBox;
+	@FXML private Label titleLabel;
+	
 	@FXML private HBox ctrlBox;
 	
 	public HeaderView() {
@@ -46,6 +49,10 @@ public class HeaderView extends HBox{
 		return null;
 	}
 	
+	public void updateTitle( String title ) {
+		this.titleLabel.setText( title );
+	}
+	
 	public Node getTitleAreaNode( String id ) {
 		return getChildNode(this.titleBox, id);
 	}
@@ -63,5 +70,4 @@ public class HeaderView extends HBox{
 		Button button = (Button) this.getChildNode( this.ctrlBox, id );
 		button.setOnAction( eventHandler );
 	}
-	
 }

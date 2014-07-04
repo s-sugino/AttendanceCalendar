@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Copyright (c) 2013, jtec/atcal. All rights reserved. -->
 
-<?language javascript?>
-
 <?import javafx.application.Platform?>
 <?import javafx.scene.*?>
 <?import javafx.scene.text.*?>
@@ -12,20 +10,19 @@
 <?import jp.co.jtec.atcal.calendar.*?>
 <?import jp.co.jtec.atcal.calendar.view.*?>
 
-
 <fx:root type="javafx.scene.layout.HBox" xmlns:fx="http://javafx.com/fxml">
 	<HBox fx:id="titleBox">
-	    <Button fx:id="prevMonthButton" text="next"  />
-		<Label  fx:id="titleLabel"      text="title" />
-	    <Button fx:id="nextMonthButton" text="prev"  />
+	    <Button fx:id="prevMonthButton" />
+		<Label  fx:id="titleLabel"      />
+	    <Button fx:id="nextMonthButton" />
 	</HBox>
 	<HBox fx:id="ctrlBox">
-	    <Button fx:id="inButton"    text="in"    />
-	    <Button fx:id="outButton"   text="out"   />
-		<Label  fx:id="separator"   text=" | "   />
-		<Button fx:id="minButton"   text="guest" />
-		<Label  fx:id="separator"   text=" | "   />
-	    <Button fx:id="minButton"   text="-"     />
-	    <Button fx:id="closeButton" text="×"     />
+	    <Button fx:id="inButton"      text="in"    />
+	    <Button fx:id="outButton"     text="out"   />
+		<Label  fx:id="separator"     text=" | "   />
+		<Button fx:id="accountButton" />
+		<Label  fx:id="separator"     text=" | "   />
+	    <Button fx:id="minButton"     text="-"     />
+	    <Button fx:id="closeButton"   text="×"     />
 	</HBox>
 </fx:root>

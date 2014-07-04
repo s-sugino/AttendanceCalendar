@@ -7,7 +7,6 @@ import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.scene.control.Label;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -18,8 +17,6 @@ import jp.co.jtec.atcal.calendar.model.MonthlyData;
 import jp.co.jtec.atcal.calendar.model.WeeklyData;
 
 public class MonthlyView extends TableView<WeeklyData> {
-
-	private Label titleLabel;
 	
 	private MonthlyData monthlyData;
 	
@@ -59,11 +56,7 @@ public class MonthlyView extends TableView<WeeklyData> {
 		this.setCurrent();
 	}
 	
-	public void setTitleLabel( Label titleLabel ) {
-		this.titleLabel = titleLabel;
-	}
-	
-	public void update( int year, int month ) {
+	public MonthlyData update( int year, int month ) {
 		
 		/* @note null item setting for update view on TableView object */
 		this.setItems( null );
@@ -79,24 +72,22 @@ public class MonthlyView extends TableView<WeeklyData> {
 		this.setItems( weeklyDataList );
 		this.layout();
 		
-		if ( this.titleLabel != null ) {
-			this.titleLabel.setText( " " + year + " / " + month + " " );
-		}
+		return this.monthlyData;
 	}
 	
-	public void setCurrent() {
+	public MonthlyData setCurrent() {
 		Calendar cal = Calendar.getInstance();
 		int year  = cal.get(Calendar.YEAR);
 		int month = cal.get(Calendar.MONTH) + 1;
-		this.update( year, month );
+		return this.update( year, month );
 	}
 	
-	public void slide( int amount ) {
+	public MonthlyData slide( int amount ) {
 		Calendar cal = this.monthlyData.getCalendar();
 		cal.add( Calendar.MONTH, amount );
 		int year  = cal.get(Calendar.YEAR);
 		int month = cal.get(Calendar.MONTH) + 1;
-		this.update( year, month );
+		return this.update( year, month );
 	}
 	
 	public MonthlyData getItem() {
