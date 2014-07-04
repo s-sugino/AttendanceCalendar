@@ -19,14 +19,14 @@ public class AuthenticationDialog extends Dialog {
 	
 	private final EventHandler<ActionEvent> cancelAction = new EventHandler<ActionEvent>() {
 		@Override
-		public void handle(ActionEvent event) {
+		public void handle( ActionEvent event ) {
 			getStage().close();
 		}
 	};
 	
 	private final EventHandler<ActionEvent> ctrlAction = new EventHandler<ActionEvent>() {
 		@Override
-		public void handle(ActionEvent event) {
+		public void handle( ActionEvent event ) {
 			System.out.println( "ctrl action ..." );
 		}
 	};

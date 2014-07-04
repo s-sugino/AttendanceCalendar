@@ -11,7 +11,7 @@ import javafx.stage.Stage;
  * @author ssugino
  */
 public class MainFrame extends BorderPane {
-		
+	
 	/**
 	 * コンストラクタ
 	 * 
@@ -32,6 +32,6 @@ public class MainFrame extends BorderPane {
 	private void setupDialog( Stage primaryStage ) {
 		DialogManager dialogManager = DialogManager.getInstance();
 		dialogManager.setOwnerStage( primaryStage );
-		dialogManager.add( "AuthenticationDialog", "jp.co.jtec.atcal.account.AuthenticationDialog" );	
+		dialogManager.add( "AuthenticationDialog", "jp.co.jtec.atcal.account.AuthenticationDialog" );
 	}
 }
