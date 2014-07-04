@@ -19,22 +19,27 @@ public class Dialog extends BorderPane {
 	 * 
 	 * @param ownerStage
 	 */
-	public Dialog( Stage ownerStage, String fxml, String css ) {
-		
-		Location.getInstance().loadFxml( fxml, this );
-		
+	public Dialog() {
 		this.dialogStage = new Stage();
-		VBox dialogWindow = new VBox();
-		dialogWindow.getChildren().add( this );
-		
-		Scene scene = new Scene( dialogWindow );
-		String styleSheetURL = Location.getInstance().getURL( css ).toString();
-		scene.getStylesheets().add( styleSheetURL );
-		scene.setFill( null );
-		
+	}
+	
+	public void setup( Stage ownerStage ) {
 		this.dialogStage.initModality( Modality.APPLICATION_MODAL );
 		this.dialogStage.initOwner( ownerStage );
 		this.dialogStage.initStyle( StageStyle.TRANSPARENT );
+	}
+	
+	protected void updateView( String fxmlFileName, String cssFileName ) {
+		
+		Location.getInstance().loadFxml( fxmlFileName, this );
+		
+		VBox dialogView = new VBox();
+		dialogView.getChildren().add( this );
+		
+		Scene scene = new Scene( dialogView );
+		Location.getInstance().loadStyleSheet( cssFileName, scene );
+		scene.setFill( null );
+		
 		this.dialogStage.setScene( scene );
 	}
 	
@@ -64,23 +69,5 @@ public class Dialog extends BorderPane {
 	 */
 	public void hide() {
 		this.dialogStage.hide();
-	}
-	
-	/**
-	 * Dialogの内容を変更する
-	 */
-	public void changeDialog( String fxml, String css ) {
-
-		Location.getInstance().loadFxml( fxml, this );
-		
-		VBox dialogWindow = new VBox();
-		dialogWindow.getChildren().add( this );
-		
-		Scene scene = new Scene( dialogWindow );
-		String styleSheetURL = Location.getInstance().getURL( css ).toString();
-		scene.getStylesheets().add( styleSheetURL );
-		scene.setFill( null );
-		
-		this.dialogStage.setScene( scene );
 	}
 }

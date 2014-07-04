@@ -6,7 +6,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
 import jp.co.jtec.atcal.Dialog;
 
 public class AuthenticationDialog extends Dialog {
@@ -21,18 +20,22 @@ public class AuthenticationDialog extends Dialog {
 	private final EventHandler<ActionEvent> cancelAction = new EventHandler<ActionEvent>() {
 		@Override
 		public void handle(ActionEvent event) {
-			// TODO Auto-generated method stub		
+			getStage().close();
 		}
 	};
 	
 	private final EventHandler<ActionEvent> ctrlAction = new EventHandler<ActionEvent>() {
 		@Override
 		public void handle(ActionEvent event) {
-			// TODO Auto-generated method stub
+			System.out.println( "ctrl action ..." );
 		}
 	};
 	
-	public AuthenticationDialog( Stage ownerStage ) {
-		super( ownerStage, "auth_dialog.fxml", "css\\auth_dialog.css" );
+	public AuthenticationDialog() {
+		super();
+		this.updateView( "auth_dialog.fxml" , "css\\auth_dialog.css" );
+		
+		this.cancelButton.setOnAction( cancelAction );
+		this.ctrlButton.setOnAction( ctrlAction );
 	}
 }

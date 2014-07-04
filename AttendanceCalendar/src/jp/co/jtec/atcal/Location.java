@@ -7,6 +7,7 @@ import java.net.URL;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 
 /**
  * このアプリケーションのパス情報を管理するクラス
@@ -95,7 +96,19 @@ public class Location {
 	 * @param cssFileName StyleSheetファイル名
 	 * @param component　適用するコンポーネント
 	 */
+	public void loadStyleSheet( String cssFileName, Scene component ) {
+		component.getStylesheets().add( this.getURL(cssFileName).toString() );
+	}
+	
+	/**
+	 * 指定されたStyleSheetをLoadして指定されたComponentに適用する
+	 * 
+	 * @param cssFileName StyleSheetファイル名
+	 * @param component　適用するコンポーネント
+	 */
 	public void loadStyleSheet( String cssFileName, Parent component ) {
 		component.getStylesheets().add( this.getURL(cssFileName).toString() );
 	}
+
+
 }
