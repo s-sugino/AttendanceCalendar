@@ -7,30 +7,26 @@
 <?import javafx.scene.layout.*?>
 <?import jp.co.jtec.atcal.*?>
 
-<fx:root type="javafx.scene.layout.BorderPane" xmlns:fx="http://javafx.com/fxml" prefHeight="160" prefWidth="230" fx:id="loginPane">
-	<top>
-	    <HBox fx:id="authHeader" alignment="center">
-	        <Label text="Account Infomation" />
-	    </HBox>
-	</top>
-	<center>
-	    <VBox fx:id="authView">
-	       	<HBox fx:id="nameBox" alignment="center">
-	        	<Label     fx:id="nameLable" text="Name" />
-	        	<TextField fx:id="nameField" />
-	       	</HBox>
-	       	<HBox fx:id="idBox" alignment="center">
-	        	<Label     fx:id="nameLable" text="Name" />
-	        	<TextField fx:id="nameField" />
-	       	</HBox>
-	       	<HBox fx:id="idBox" alignment="center">
-	        	<Label         fx:id="passLabel" text="Password"  />
-	        	<PasswordField fx:id="passField" />
-	       	</HBox>
-	       	<HBox fx:id="ctrlBox" alignment="top_right">
-	       		<Button fx:id="ctrlButton"   text="Login"/>
-	       		<Button fx:id="cancelButton" text="Cancel"/>
-	    	</HBox>
-	    </VBox>
-	</center>
+<fx:root type="javafx.scene.layout.VBox" xmlns:fx="http://javafx.com/fxml" prefWidth="500" prefHeight="200" fx:id="accountDialogBox">
+	<GridPane fx:id="inputArea">
+	
+		<!-- Title Area -->
+	    <Label fx:id="title" prefWidth="430" text="Please input your account information."
+	    	   GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="2" />
+
+		<!-- Input Area -->
+	    <Label         fx:id="nameLable"  GridPane.columnIndex="0" GridPane.rowIndex="1" text="Name:" />
+	    <TextField     fx:id="nameField"  GridPane.columnIndex="1" GridPane.rowIndex="1" />
+	    <Label         fx:id="idLable"    GridPane.columnIndex="0" GridPane.rowIndex="2" text="ID:" />
+	    <TextField     fx:id="idField"    GridPane.columnIndex="1" GridPane.rowIndex="2" />
+	    <Label         fx:id="passLabel"  GridPane.columnIndex="0" GridPane.rowIndex="3" text="Password:" />
+	    <PasswordField fx:id="passField"  GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+		<!-- Controll Area -->		
+	    <HBox fx:id="ctrlArea" GridPane.columnIndex="1" GridPane.rowIndex="4" spacing="10">
+   			<Button fx:id="ctrlButton"   prefWidth="100" text="login"  />
+   			<Button fx:id="cancelButton" prefWidth="100" text="cancel" />
+		</HBox>
+	
+	</GridPane>
 </fx:root>

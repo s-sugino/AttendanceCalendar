@@ -1,21 +1,45 @@
 /**
- * @file auth.css
+ * @file auth_dialog.css
  * 
- * 
+ * Authentication style
  */
 
-/*--------------------------------------------------------*
-   Authentication style
-　*--------------------------------------------------------*/
-
-#loginPane {
-	-fx-background-color: rgba(230,230,230,0.9);
-	-fx-background-radius: 15;
-	-fx-padding: 0;
+#accountDialogBox {
+	-fx-background-color: rgba(105,105,105,0.8);
+	-fx-background-radius: 5;
+	-fx-padding: 5;
 }
 
-#loginTopPane {
-	-fx-background-color: rgba(0,0,0,0.9);
-	-fx-background-radius: 15 15 0 0 ;
-	-fx-padding: 0;
+#inputArea {
+	-fx-alignment: center;
+	-fx-hgap: 20;
+	-fx-vgap: 5;
+}
+
+#ctrlArea {
+	-fx-alignment: top-right;
+	-fx-spacing: 10;
+}
+
+.label {
+    -fx-font-size: 18pt;
+    -fx-font-family: "Segoe UI Light";
+	-fx-text-fill: white;
+    -fx-padding: 3;
+    -fx-opacity: 3;
+}
+
+.label #title {
+	-fx-font-size: 25pt;
+}
+
+.button {
+	-fx-background-color: rgba(200,200,200,0.5);
+	-fx-background-radius: 3;
+	-fx-font-size: 15pt;
+	-fx-font-family: "Segoe UI Light";
+	-fx-text-fill: white;
+	-fx-padding: 3;
+	-fx-spacing: 3;
+	-fx-opacity: 3;
 }

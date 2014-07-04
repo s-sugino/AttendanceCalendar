@@ -34,8 +34,8 @@ public class AuthenticationDialog extends Dialog {
 	public AuthenticationDialog() {
 		super();
 		this.updateView( "auth_dialog.fxml" , "css\\auth_dialog.css" );
-		
 		this.cancelButton.setOnAction( cancelAction );
 		this.ctrlButton.setOnAction( ctrlAction );
 	}
+
 }

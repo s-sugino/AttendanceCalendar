@@ -1,7 +1,6 @@
 package jp.co.jtec.atcal;
 
 import javafx.scene.Scene;
-import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -10,7 +9,7 @@ import javafx.stage.StageStyle;
 /**
  * Dialogクラス
  */
-public class Dialog extends BorderPane {
+public class Dialog extends VBox {
 	
 	private Stage dialogStage;
 	
@@ -32,7 +31,6 @@ public class Dialog extends BorderPane {
 	protected void updateView( String fxmlFileName, String cssFileName ) {
 		
 		Location.getInstance().loadFxml( fxmlFileName, this );
-		
 		VBox dialogView = new VBox();
 		dialogView.getChildren().add( this );
 		
