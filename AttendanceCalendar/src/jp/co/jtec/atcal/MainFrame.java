@@ -75,7 +75,7 @@ public class MainFrame extends BorderPane {
 	 */
 	public MainFrame( Stage primaryStage ) {
 		
-		this.primaryStage = primaryStage;	
+		this.primaryStage = primaryStage;
 		Location.getInstance().loadFxml( "atcal.fxml", this );
 		
 		/* 最大化した時の高さ調節のためにbindしておく */

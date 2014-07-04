@@ -17,15 +17,12 @@ import jp.co.jtec.atcal.Dialog;
 public class AuthenticationFrame extends Dialog {
 		
 	@FXML private Button cancelButton;
-	
 	@FXML private Button loginButton;
-	
 	@FXML private Button closeButton;
 	
 	@FXML private TextField idField;
-	
 	@FXML private PasswordField passField;
-
+	
 	/**
 	 * Authentication state
 	 * 

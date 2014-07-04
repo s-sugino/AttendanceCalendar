@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright (c) 2013, jtec/atcal. All rights reserved. -->
+ 
+<?import javafx.scene.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import jp.co.jtec.atcal.*?>
+
+<fx:root type="javafx.scene.layout.BorderPane" xmlns:fx="http://javafx.com/fxml" prefHeight="160" prefWidth="230" fx:id="loginPane">
+	<top>
+	    <HBox fx:id="authHeader" alignment="center">
+	        <Label text="Account Infomation" />
+	    </HBox>
+	</top>
+	<center>
+	    <VBox fx:id="authView">
+	       	<HBox fx:id="nameBox" alignment="center">
+	        	<Label     fx:id="nameLable" text="Name" />
+	        	<TextField fx:id="nameField" />
+	       	</HBox>
+	       	<HBox fx:id="idBox" alignment="center">
+	        	<Label     fx:id="nameLable" text="Name" />
+	        	<TextField fx:id="nameField" />
+	       	</HBox>
+	       	<HBox fx:id="idBox" alignment="center">
+	        	<Label         fx:id="passLabel" text="Password"  />
+	        	<PasswordField fx:id="passField" />
+	       	</HBox>
+	       	<HBox fx:id="ctrlBox" alignment="top_right">
+	       		<Button fx:id="ctrlButton"   text="Login"/>
+	       		<Button fx:id="cancelButton" text="Cancel"/>
+	    	</HBox>
+	    </VBox>
+	</center>
+</fx:root>
