@@ -30,12 +30,16 @@ public class AuthenticationDialog extends Dialog {
 	private final EventHandler<ActionEvent> ctrlAction = new EventHandler<ActionEvent>() {
 		@Override
 		public void handle( ActionEvent event ) {
-			Account account = AccountManager.getInstance().getPrimary();
+			/* 
+			 * primaryアカウントがguestアカウントならばログインしていない状態と判断なのでアクションとしてはこれからログイン 
+			 * TODO Refact: 将来的にはログイン情報をファイルに残して起動時に一度パスワードを聞くとかしてユーザ入力回数を減らしたい
+			 */
+			Account account = AccountManager.getInstance().getPrimary();			
 			if ( account.isDefault() ) {
 				try {
 					login();
 				} catch (AuthenticationFailedException e) {
-					// TODO login failed action
+					/* TODO 　未実装： ログイン失敗時の動作　*/
 				}
 			} else {
 				logout();
