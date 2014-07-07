@@ -1,9 +1,5 @@
 package jp.co.jtec.atcal.account;
 
-import java.util.Arrays;
-import java.util.Iterator;
-import java.util.List;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -33,9 +29,14 @@ public class AccountManagerTest {
 	@Test
 	public void testAdd() {
 		
-		this.manager.add( new Account( "sample1", "2003042" ) );
-		this.manager.add( new Account( "sample2", "2003043" ) );
-		this.manager.add( new Account( "sample3", "2003044" ) );
+		try {
+			this.manager.add( new Account( "sample1", "2003042", "sample" ) );
+			this.manager.add( new Account( "sample2", "2003043", "sample" ) );
+			this.manager.add( new Account( "sample3", "2003044", "sample" ) );
+		} catch (AuthenticationFailedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		assert( this.manager.size() == 4 );
 	}
@@ -43,7 +44,12 @@ public class AccountManagerTest {
 	@Test
 	public void testAddPrimary1() {
 		
-		this.manager.addPrimary( new Account( "sample", "2003042" ) );
+		try {
+			this.manager.addPrimary( new Account( "sample", "2003042", "sample" ) );
+		} catch (AuthenticationFailedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		Account account = this.manager.getPrimary();
 		
 		assert( account.isDefault() == false );
@@ -54,9 +60,14 @@ public class AccountManagerTest {
 	@Test
 	public void testAddPrimary2() {
 		
-		this.manager.addPrimary( new Account( "sample1", "2003042" ) );
-		this.manager.addPrimary( new Account( "sample2", "2003043" ) );
-		this.manager.addPrimary( new Account( "sample3", "2003044" ) );
+		try {
+			this.manager.addPrimary( new Account( "sample1", "2003042", "sample" ) );
+			this.manager.addPrimary( new Account( "sample2", "2003043", "sample" ) );
+			this.manager.addPrimary( new Account( "sample3", "2003044", "sample" ) );
+		} catch (AuthenticationFailedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		Account account = this.manager.getPrimary();
 		assert( account.isDefault() == false );
@@ -67,44 +78,45 @@ public class AccountManagerTest {
 	@Test
 	public void testRemove1() {
 		
-		List<Account> list = Arrays.asList(
-			new Account( "sample1", "2003042" ),
-			new Account( "sample2", "2003043" ),
-			new Account( "sample3", "2003044" )
-		);
-		
-		Iterator<Account> itr = list.iterator();
-		while ( itr.hasNext() ) {
-			this.manager.add( itr.next() );
+		Account account1 = null, account2 = null, account3 = null;
+		try {
+			account1 = new Account( "sample1", "2003042", "sample" );
+			account2 = new Account( "sample2", "2003043", "sample" );
+			account3 = new Account( "sample3", "2003044", "sample" );
+		} catch (AuthenticationFailedException e) {
+			e.printStackTrace();
 		}
+		
 		assert( this.manager.size() == 4 );
 		
-		itr = list.iterator();
-		while ( itr.hasNext() ) {
-			this.manager.remove( itr.next() );
-		}
+		this.manager.remove( account1 );
+		this.manager.remove( account2 );
+		this.manager.remove( account3 );
+
 		assert( this.manager.size() == 1 );	
 	}
 
 	@Test
 	public void testRemove2() {
-		
-		List<Account> list = Arrays.asList(
-			new Account( "sample1", "2003042" ),
-			new Account( "sample2", "2003043" ),
-			new Account( "sample3", "2003044" )
-		);
-		
-		Iterator<Account> itr = list.iterator();
-		while ( itr.hasNext() ) {
-			this.manager.addPrimary( itr.next() );
+
+		Account account1 = null, account2 = null, account3 = null;
+		try {
+			account1 = new Account( "sample1", "2003042", "sample" );
+			account2 = new Account( "sample2", "2003043", "sample" );
+			account3 = new Account( "sample3", "2003044", "sample" );
+		} catch (AuthenticationFailedException e) {
+			e.printStackTrace();
 		}
+		
+		this.manager.addPrimary( account1 );
+		this.manager.addPrimary( account2 );
+		this.manager.addPrimary( account3 );
+		
 		assert( this.manager.size() == 4 );
 		
-		itr = list.iterator();
-		while ( itr.hasNext() ) {
-			this.manager.remove( itr.next() );
-		}
+		this.manager.remove( account1 );
+		this.manager.remove( account2 );
+		this.manager.remove( account3 );
 		assert( this.manager.size() == 1 );	
 		
 		Account account = this.manager.getPrimary();

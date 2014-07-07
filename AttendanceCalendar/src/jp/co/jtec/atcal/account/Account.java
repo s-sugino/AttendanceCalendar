@@ -15,9 +15,21 @@ public class Account {
 		this.id   = DEFAULT_ID;
 	}
 	
-	public Account( String name, String id ) {
+	public Account( String name, String id, String passwd) throws AuthenticationFailedException {
+		this.authenticate(name, id, passwd);
 		this.name = name;
 		this.id   = id;
+	}
+	
+	private void authenticate( String name, String id, String passwd) throws AuthenticationFailedException {
+		
+		boolean success = true;
+		
+		/* TODO  authentication function add. */
+		
+		if ( !success ) {
+			throw new AuthenticationFailedException( name , id );
+		}
 	}
 	
 	public String getName() {

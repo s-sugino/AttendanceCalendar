@@ -18,10 +18,12 @@ public class MainFrame extends BorderPane {
 	 * @param primaryStage
 	 */
 	public MainFrame( Stage primaryStage ) {
+		
+		this.setupDialog( primaryStage );
+		
 		Location.getInstance().loadFxml( "atcal.fxml", this );
 		/* 最大化した時の高さ調節のためにbindしておく */
 		this.prefHeightProperty().bind( primaryStage.heightProperty() );
-		this.setupDialog( primaryStage );
 	}
 	
 	/**

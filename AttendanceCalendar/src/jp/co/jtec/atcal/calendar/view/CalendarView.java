@@ -6,6 +6,7 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.layout.BorderPane;
+import javafx.stage.WindowEvent;
 import jp.co.jtec.atcal.Dialog;
 import jp.co.jtec.atcal.DialogManager;
 import jp.co.jtec.atcal.Location;
@@ -44,6 +45,13 @@ public class CalendarView extends BorderPane {
 		}
 	};
 	
+	private final EventHandler<WindowEvent> authFinAction = new EventHandler<WindowEvent>() {
+		@Override
+		public void handle(WindowEvent arg0) {
+			updateAccount();
+		}
+	};
+	
 	private final EventHandler<ActionEvent> closeAction = new EventHandler<ActionEvent>() {
 		@Override
 		public void handle(ActionEvent event) {
@@ -62,6 +70,11 @@ public class CalendarView extends BorderPane {
 		
 		this.headerView.setCtrlButtonAction( "accountButton", this.authAction );
 		this.headerView.setCtrlButtonAction( "closeButton",   this.closeAction );
+		
+		Dialog authDialog = DialogManager.getInstance().get( "AuthenticationDialog" );
+		if ( authDialog != null ) {
+			authDialog.getStage().setOnHidden( this.authFinAction );
+		}
 		
 		this.updateAccount();
 		this.updateCalendar();
